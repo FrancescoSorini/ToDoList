@@ -7,6 +7,8 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
+#include "List.h"
 
 
 class User {
@@ -17,9 +19,15 @@ public:
 
     const std::string &getUsername() const;
 
+    void add_list(const List &list);
+
+    void remove_list(const List &list);
+
+    void print_all_lists();
 
 private:
     std::string username;
+    std::vector<List> lists;
 };
 
 

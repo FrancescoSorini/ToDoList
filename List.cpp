@@ -26,9 +26,9 @@ void List::remove_task(const Task &task) {
 
 void List::print_tasks() {
     for (std::vector<Task>::iterator it = tasks.begin(); it != tasks.end(); ++it) {
-        std::cout << "Title: " << it->getTitle() << std::endl;
-        std::cout << "Description: " << it->getDescription() << std::endl;
-        std::cout << "Completed: " << (it->is_completed() ? "Yes" : "No") << std::endl;
+        std::cout << "Titolo: " << it->getTitle() << std::endl;
+        std::cout << "Descrizione: " << it->getDescription() << std::endl;
+        std::cout << "Completato: " << (it->is_completed() ? "Si" : "No") << std::endl;
         std::cout << std::endl;
     }
 }
