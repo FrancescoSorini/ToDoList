@@ -16,6 +16,10 @@ void Task::setDescription(const std::string &description) {
     Task::description = description;
 }
 
+const std::string &Task::getDescription() const {
+    return description;
+}
+
 bool Task::is_completed() {
     return completed;
 }
@@ -23,5 +27,7 @@ bool Task::is_completed() {
 void Task::mark_completed() {
     completed = true;
 }
+
+
 
 

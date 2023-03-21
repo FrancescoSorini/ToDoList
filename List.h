@@ -7,6 +7,9 @@
 
 #include <string>
 #include <vector>
+#include <algorithm>
+#include <iostream>
+#include "Task.h"
 
 class List {
 public:
@@ -16,10 +19,15 @@ public:
 
     const std::string &getTitle() const;
 
-public:
+    void add_task(const Task &task);
+
+    void remove_task(const Task &task);
+
+    void print_tasks();
 
 private:
     std::string title;
+    std::vector<Task> tasks;
 };
 
 #endif //TODOLIST_LIST_H

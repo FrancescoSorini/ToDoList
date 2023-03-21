@@ -17,6 +17,8 @@ public:
 
     void setDescription(const std::string &description);
 
+    const std::string &getDescription() const;
+
     bool is_completed();
 
     void mark_completed();
