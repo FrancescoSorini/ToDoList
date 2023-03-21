@@ -3,4 +3,4 @@ project(ToDoList)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(ToDoList main.cpp User.h User.cpp List.cpp List.h)
+add_executable(ToDoList main.cpp User.h User.cpp List.cpp List.h Task.cpp Task.h)
