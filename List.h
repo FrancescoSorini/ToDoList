@@ -25,6 +25,8 @@ public:
 
     void print_tasks();
 
+    int task_counter();
+
 private:
     std::string title;
     std::vector<Task> tasks;

@@ -17,7 +17,7 @@ void List::add_task(const Task &task) {
 }
 
 void List::remove_task(const Task &task) {
-    for (std::vector<Task>::iterator it = tasks.begin(); it != tasks.end(); ++it) {
+    for (auto it = tasks.begin(); it != tasks.end(); ++it) {
         if (it->getTitle() == task.getTitle()) {
             tasks.erase(it);
         }
@@ -25,12 +25,20 @@ void List::remove_task(const Task &task) {
 }
 
 void List::print_tasks() {
-    for (std::vector<Task>::iterator it = tasks.begin(); it != tasks.end(); ++it) {
-        std::cout << "Titolo: " << it->getTitle() << std::endl;
-        std::cout << "Descrizione: " << it->getDescription() << std::endl;
-        std::cout << "Completato: " << (it->is_completed() ? "Si" : "No") << std::endl;
+    for (auto &task: tasks) {
+        std::cout << "Titolo: " << task.getTitle() << std::endl;
+        std::cout << "Descrizione: " << task.getDescription() << std::endl;
+        std::cout << "Completato: " << (task.is_completed() ? "Si" : "No") << std::endl;
         std::cout << std::endl;
     }
+}
+
+int List::task_counter() {
+    int counter = 0;
+    for (auto &task: tasks) {
+        counter++;
+    }
+    return counter;
 }
 
 
