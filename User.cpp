@@ -33,6 +33,14 @@ void User::print_all_lists() {
     }
 }
 
+int User::list_counter() {
+    int counter = 0;
+    for (auto &list: lists) {
+        counter++;
+    }
+    return counter;
+}
+
 
 
 

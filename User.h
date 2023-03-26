@@ -25,6 +25,8 @@ public:
 
     void print_all_lists();
 
+    int list_counter();
+
 private:
     std::string username;
     std::vector<List> lists;
