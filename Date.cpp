@@ -7,7 +7,7 @@
 
 Date::Date() {}
 
-Date::Date(int d, int m, int y) //costruttore
+Date::Date(int d, int m, int y)
 {
     if (is_valid(d, m, y)) {
         day = d;
@@ -17,13 +17,11 @@ Date::Date(int d, int m, int y) //costruttore
 };
 
 
-bool Date::is_valid(int d, int m, int y) //metodo di classe
-{
+bool Date::is_valid(int d, int m, int y) {
     return d >= 1 && d <= 31 && m >= 1 && m <= 12 && y >= 0;
 }
 
-std::string Date::short_format() const//getter
-{
+std::string Date::short_format() const {
     return std::to_string(day) + "/" +
            std::to_string(month) + "/" +
            std::to_string(year);
@@ -120,7 +118,7 @@ Date Date::operator++(int dummy) {
     Date d = *this; //l'incremento suffisso deve prima ritornare prima della modifica
     day++;
 
-    //incremento la data
+
     if (day > days_month(month, year)) {
         month++;
         day = 1;
