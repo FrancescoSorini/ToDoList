@@ -82,7 +82,13 @@ bool Date::operator>(const Date &other) {
 }
 
 bool Date::leap_year(int _year) {
-    return ((_year % 4 == 0 && _year % 100 == 0) || (_year % 400 == 0));
+    if (_year % 4 == 0) {
+        if (_year % 100 == 0) {
+            if (_year % 400 == 0) {
+                return true;
+            } else { return false; }
+        } else { return true; }
+    } else { return false; }
 }
 
 int Date::days_month(int _month, int _year) {
