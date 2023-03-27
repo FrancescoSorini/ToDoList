@@ -6,18 +6,21 @@
 #define TODOLIST_TASK_H
 
 #include <string>
+#include "Date.h"
 
 class Task {
 public:
     Task();
 
-    explicit Task(const std::string &title, bool completed);
+    explicit Task(const std::string &title, Date due_date, bool completed);
 
     const std::string &getTitle() const;
 
     void setDescription(const std::string &description);
 
     const std::string &getDescription() const;
+
+    Date get_due_date();
 
     bool is_completed();
 
@@ -27,7 +30,8 @@ public:
 private:
     std::string title;
     std::string description;
-    bool completed;
+    bool completed{};
+    Date due_date;
 };
 
 #endif //TODOLIST_TASK_H
