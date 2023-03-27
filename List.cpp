@@ -28,6 +28,7 @@ void List::print_tasks() {
     for (auto &task: tasks) {
         std::cout << "Titolo: " << task.getTitle() << std::endl;
         std::cout << "Descrizione: " << task.getDescription() << std::endl;
+        std::cout << "Scadenza: " << task.get_due_date() << std::endl;
         std::cout << "Completato: " << (task.is_completed() ? "Si" : "No") << std::endl;
         std::cout << std::endl;
     }
