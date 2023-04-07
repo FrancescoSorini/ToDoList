@@ -17,3 +17,14 @@ TEST(Date, EqualToTest) {
     ASSERT_FALSE(d1.equal_to(d2));
     ASSERT_TRUE(d1.equal_to(d3));
 }
+
+TEST(Date, OperatorsTest) {
+    Date d4(7, 4, 2023);
+    Date d5(8, 4, 2023);
+    ASSERT_FALSE(d4 == d5);
+    ASSERT_TRUE(d5 > d4);
+    ASSERT_TRUE(d4 < d5);
+    d4++;
+    ASSERT_TRUE(d4 == d5);
+}
+

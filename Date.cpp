@@ -135,7 +135,7 @@ Date Date::operator++(int dummy) {
         day = 1;
     }
     return d;
-}
+} //verificare se utile
 
 //overload <<
 std::ostream &operator<<(std::ostream &stream, const Date &d) {

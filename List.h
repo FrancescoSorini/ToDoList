@@ -23,10 +23,16 @@ public:
 
     void remove_task(const Task &task);
 
-    void print_tasks();
+    void print_tasks(); //const
 
-    int task_counter();
+    int task_counter(); //const
 
+    void mark_completed(Task task);
+
+
+//modifica task
+//contatore completed o no
+//cerca task per data, cerca per nome task, testare la presenza task sia per nome che per data
 private:
     std::string title;
     std::vector<Task> tasks;

@@ -23,10 +23,6 @@ bool Task::is_completed() {
     return completed;
 }
 
-void Task::mark_completed() {
-    completed = true;
-}
-
 Date Task::get_due_date() {
     return due_date;
 }

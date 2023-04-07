@@ -20,3 +20,4 @@ TEST(List, TaskManagement) {
     l.remove_task(t1);
     ASSERT_EQ(1, l.task_counter());
 }
+

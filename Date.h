@@ -26,8 +26,8 @@ public:
     bool is_valid(int d, int m, int y);
     void print_Date(Date d);
     bool equal_to(Date);
-    static bool leap_year(int);
-    static int days_month(int, int);
+
+    static bool leap_year(int _year);
 
 
     //operators overload
@@ -41,6 +41,8 @@ public:
 
 private:
     int day, month, year;
+
+    int days_month(int _month, int _year);
 };
 
 std::ostream &operator<<(std::ostream &, const Date &);

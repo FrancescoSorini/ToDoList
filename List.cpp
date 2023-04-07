@@ -42,4 +42,9 @@ int List::task_counter() {
     return counter;
 }
 
+void List::mark_completed(Task task) {
+    if (task.is_completed() == false)
+        task.completed = true;
+}
+
 

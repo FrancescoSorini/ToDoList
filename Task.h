@@ -24,14 +24,13 @@ public:
 
     bool is_completed();
 
-    void mark_completed();
-
-
 private:
     std::string title;
     std::string description;
-    bool completed{};
+    bool completed;
     Date due_date;
+
+    friend class List;
 };
 
 #endif //TODOLIST_TASK_H
