@@ -28,7 +28,7 @@ void List::print_tasks() {
     for (auto &task: tasks) {
         std::cout << "Titolo: " << task.getTitle() << std::endl;
         std::cout << "Descrizione: " << task.getDescription() << std::endl;
-        std::cout << "Scadenza: " << task.get_due_date() << std::endl;
+        std::cout << "Scadenza: " << task.getDueDate() << std::endl;
         std::cout << "Completato: " << (task.is_completed() ? "Si" : "No") << std::endl;
         std::cout << std::endl;
     }
@@ -46,5 +46,33 @@ void List::mark_completed(Task task) {
     if (task.is_completed() == false)
         task.completed = true;
 }
+
+int List::completed_counter() {
+    int completed = 0;
+    int uncompleted = 0;
+    for (auto &task: tasks) {
+        if (task.is_completed())
+            completed++;
+    }
+    return completed;
+}
+
+void List::mod_task_title(Task &task, const std::string &new_title) {
+    task.setTitle(new_title);
+}
+
+
+void List::mod_task_desc(Task &task, const std::string &new_desc) {
+    task.setDescription(new_desc);
+}
+
+void List::mod_task_duedate(Task &task, const Date &new_date) {
+    task.setDueDate(new_date);
+}
+
+
+
+
+
 
 

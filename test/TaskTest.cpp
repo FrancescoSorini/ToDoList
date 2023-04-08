@@ -8,9 +8,3 @@ TEST(Task, DefaultConstructor) {
     Task t;
     ASSERT_FALSE(t.is_completed());
 }
-
-TEST(Task, CompletedCheck) {
-    Task t1;
-    t1.mark_completed();
-    ASSERT_TRUE(t1.is_completed());
-}

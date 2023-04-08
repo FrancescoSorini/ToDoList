@@ -12,15 +12,21 @@ class Task {
 public:
     Task();
 
-    explicit Task(const std::string &title, Date due_date, bool completed);
+    explicit Task(const std::string &title, const std::string &description, Date due_date, bool completed);
 
+    //getter
     const std::string &getTitle() const;
-
-    void setDescription(const std::string &description);
 
     const std::string &getDescription() const;
 
-    Date get_due_date();
+    Date getDueDate() const;
+
+    //setter
+    void setTitle(const std::string &new_title);
+
+    void setDescription(const std::string &new_description);
+
+    void setDueDate(const Date &new_date);
 
     bool is_completed();
 

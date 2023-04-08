@@ -25,13 +25,19 @@ public:
 
     void print_tasks(); //const
 
-    int task_counter(); //const
-
     void mark_completed(Task task);
 
+    int task_counter(); //const
+    int completed_counter();
 
-//modifica task
-//contatore completed o no
+    //modify task
+    void mod_task_title(Task &task, const std::string &new_title);
+
+    void mod_task_desc(Task &task, const std::string &new_desc);
+
+    void mod_task_duedate(Task &task, const Date &new_date);
+
+
 //cerca task per data, cerca per nome task, testare la presenza task sia per nome che per data
 private:
     std::string title;
