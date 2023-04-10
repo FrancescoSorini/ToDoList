@@ -23,7 +23,7 @@ const std::string &Task::getDescription() const {
     return description;
 }
 
-bool Task::is_completed() {
+bool Task::is_completed() const {
     return completed;
 }
 

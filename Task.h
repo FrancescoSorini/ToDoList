@@ -20,12 +20,12 @@ public:
     const std::string &getDescription() const;
     Date getDueDate() const;
 
+    bool is_completed() const;
+
     //setter
     void setTitle(const std::string &new_title);
     void setDescription(const std::string &new_description);
     void setDueDate(const Date &new_date);
-
-    bool is_completed();
 
     void print_task();
 

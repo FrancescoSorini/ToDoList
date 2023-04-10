@@ -24,7 +24,7 @@ void List::remove_task(const Task &task) {
     }
 }
 
-void List::print_tasks() {
+void List::print_tasks() const {
     for (auto &task: tasks) {
         std::cout << "Titolo: " << task.getTitle() << std::endl;
         std::cout << "Descrizione: " << task.getDescription() << std::endl;
@@ -34,7 +34,7 @@ void List::print_tasks() {
     }
 }
 
-int List::task_counter() {
+int List::task_counter() const {
     int counter = 0;
     for (auto &task: tasks) {
         counter++;
@@ -47,7 +47,7 @@ void List::mark_completed(Task task) {
         task.completed = true;
 }
 
-int List::completed_counter() {
+int List::completed_counter() const {
     int completed = 0;
     int uncompleted = 0;
     for (auto &task: tasks) {

@@ -14,18 +14,22 @@
 class List {
 public:
     List();
+
     explicit List(const std::string &title);
 
     const std::string &getTitle() const;
 
     void add_task(const Task &task);
+
     void remove_task(const Task &task);
-    void print_tasks(); //const
+
+    void print_tasks() const;
 
     void mark_completed(Task task);
 
-    int task_counter(); //const
-    int completed_counter();
+    int task_counter() const;
+
+    int completed_counter() const;
 
     //modify task
     void mod_task_title(Task &task, const std::string &new_title);
@@ -34,7 +38,7 @@ public:
 
     void mod_task_duedate(Task &task, const Date &new_date);
 
-    //cercare task per nome, cercare task per data, testare la presenza task sia per nome che per data
+    //find task
     Task find_by_name(const std::string &name);
 
     int find_by_date(const Date &date);
