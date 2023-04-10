@@ -23,13 +23,16 @@ public:
 
     void remove_list(const List &list);
 
-    void print_all_lists();
+    //stampa una delle liste, anche quanti task e quanti da completare
+    void print_a_list(const List &list) const;
 
     int list_counter();
 
 private:
     std::string username;
     std::vector<List> lists;
+
+    friend class List;
 };
 
 

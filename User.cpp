@@ -24,14 +24,6 @@ void User::remove_list(const List &list) {
     }
 }
 
-void User::print_all_lists() {
-    for (std::vector<List>::iterator it = lists.begin(); it != lists.end(); ++it) {
-        std::cout << "Lista: " << it->getTitle() << std::endl;
-        std::cout << "---------------------------" << std::endl;
-        it->print_tasks();
-        std::cout << "---------------------------" << std::endl;
-    }
-}
 
 int User::list_counter() {
     int counter = 0;
@@ -40,6 +32,18 @@ int User::list_counter() {
     }
     return counter;
 }
+
+void User::print_a_list(const List &list) const {
+    std::cout << list.getTitle() << std::endl;
+    std::cout << "---------------------------" << std::endl;
+    list.print_tasks();
+    std::cout << "---------------------------" << std::endl;
+    std::cout << "Task completate: " << list.completed_counter() << std::endl;
+    std::cout << "Task da completare: " << list.task_counter() - list.completed_counter() << std::endl;
+    std::cout << "---------------------------" << std::endl;
+}
+
+
 
 
 
