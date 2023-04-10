@@ -43,3 +43,17 @@ TEST(List, ModifyTask) {
     ASSERT_EQ("Nuova descrizione prima task", t1.getDescription());
     ASSERT_TRUE(t1.getDueDate() == d2);
 }
+
+TEST(List, FindTask) {
+    List l;
+    Date d1(9, 4, 2023);
+    Date d2(3, 4, 2023);
+    Task t1("Prima task", "cercare prima", d1, false);
+    Task t2("Seconda task", "cercare seconda", d2, true);
+    Task t3("Terza task", "cercare terza", d2, true);
+    l.add_task(t1);
+    l.add_task(t2);
+    l.add_task(t3);
+    ASSERT_TRUE(l.find_by_name("Prima task") == t1);
+    ASSERT_TRUE(l.find_by_date(d2) == 2);
+}

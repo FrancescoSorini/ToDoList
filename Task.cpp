@@ -4,8 +4,8 @@
 
 #include "Task.h"
 
-Task::Task(const std::string &title, const std::string &description, Date due_date, bool completed = false)
-        : title{title}, description{description}, due_date(due_date) {}
+Task::Task(const std::string &title, const std::string &description, Date due_date, bool completed)
+        : title{title}, description{description}, due_date(due_date), completed(completed) {}
 
 const std::string &Task::getTitle() const {
     return title;
@@ -35,6 +35,19 @@ Task::Task() {}
 
 void Task::setDueDate(const Date &new_date) {
     due_date = new_date;
+}
+
+void Task::print_task() {
+    std::cout << "Titolo: " << title << std::endl;
+    std::cout << "Descrizione: " << description << std::endl;
+    std::cout << "Scadenza: " << due_date << std::endl;
+    std::cout << "Completato? " << (completed ? "Si" : "No") << std::endl;
+    std::cout << std::endl;
+}
+
+bool Task::operator==(const Task &other) {
+    return title == other.title && description == other.description && due_date == other.due_date &&
+           completed == other.completed;
 }
 
 

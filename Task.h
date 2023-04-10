@@ -6,6 +6,7 @@
 #define TODOLIST_TASK_H
 
 #include <string>
+#include <iostream>
 #include "Date.h"
 
 class Task {
@@ -16,20 +17,19 @@ public:
 
     //getter
     const std::string &getTitle() const;
-
     const std::string &getDescription() const;
-
     Date getDueDate() const;
 
     //setter
     void setTitle(const std::string &new_title);
-
     void setDescription(const std::string &new_description);
-
     void setDueDate(const Date &new_date);
 
     bool is_completed();
 
+    void print_task();
+
+    bool operator==(const Task &other);
 private:
     std::string title;
     std::string description;
