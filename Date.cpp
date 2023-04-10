@@ -49,37 +49,6 @@ bool Date::operator==(const Date &other) {
     return day == other.day && month == other.month && year == other.year;
 }
 
-bool Date::operator<(const Date &other) {
-    if (year < other.year)
-        return true;
-    else {
-        if (year == other.year)
-            if (month < other.month)
-                return true;
-            else {
-                if (month == other.month)
-                    if (day < other.day)
-                        return true;
-            }
-        return false;
-    }
-}
-
-bool Date::operator>(const Date &other) {
-    if (year > other.year)
-        return true;
-    else {
-        if (year == other.year)
-            if (month > other.month)
-                return true;
-            else {
-                if (month == other.month)
-                    if (day > other.day)
-                        return true;
-            }
-        return false;
-    }
-}
 
 bool Date::leap_year(int _year) {
     if (_year % 4 == 0) {
@@ -118,24 +87,6 @@ int Date::days_month(int _month, int _year) {
             break;
     }
 }
-
-
-Date Date::operator++(int dummy) {
-    Date d = *this; //l'incremento suffisso deve prima ritornare prima della modifica
-    day++;
-
-
-    if (day > days_month(month, year)) {
-        month++;
-        day = 1;
-    }
-    if (month > 12) {
-        year++;
-        month = 1;
-        day = 1;
-    }
-    return d;
-} //verificare se utile
 
 //overload <<
 std::ostream &operator<<(std::ostream &stream, const Date &d) {

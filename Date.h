@@ -32,9 +32,6 @@ public:
 
     //operators overload
     bool operator==(const Date &);  //uso una const reference per eventuali utilizzi di confronto su tipi non std
-    bool operator<(const Date &);
-    bool operator>(const Date &);
-    Date operator++(int);
     friend std::ostream &operator<<(std::ostream &, const Date &);
     explicit operator std::string() const;
 
