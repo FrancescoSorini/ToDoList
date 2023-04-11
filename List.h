@@ -39,9 +39,9 @@ public:
     void mod_task_duedate(Task &task, const Date &new_date);
 
     //find task
-    Task find_by_name(const std::string &name);
+    Task find_by_name(const std::string &name) const;
 
-    int find_by_date(const Date &date);
+    int find_by_date(const Date &date) const;
 
 private:
     std::string title;

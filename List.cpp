@@ -70,7 +70,7 @@ void List::mod_task_duedate(Task &task, const Date &new_date) {
     task.setDueDate(new_date);
 }
 
-Task List::find_by_name(const std::string &name) {
+Task List::find_by_name(const std::string &name) const {
     for (auto task: tasks) {
         if (task.title == name) {
             task.print_task();
@@ -79,7 +79,7 @@ Task List::find_by_name(const std::string &name) {
     }
 }
 
-int List::find_by_date(const Date &date) {
+int List::find_by_date(const Date &date) const {
     int found = 0;
     for (auto task: tasks) {
         if (task.getDueDate() == date) {
